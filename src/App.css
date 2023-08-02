@@ -1,0 +1,13 @@
+body {
+  font-family: "Edu NSW ACT Foundation", cursive;
+  text-align: center;
+  color: #3c3c3c;
+}
+
+.footer {
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  text-decoration: none;
+}

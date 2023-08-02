@@ -1,15 +1,17 @@
 import React from "react";
+import Weather from "./Weather";
 import "./App.css";
 
 export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Weather App</h1>
+        <Weather />
         <footer>
           <small>
             This project was coded by{" "}
             <a
+              className="footer-link"
               href="https://www.linkedin.com/in/olena-myronenko-ua/"
               target="blank"
             >
@@ -17,13 +19,18 @@ export default function App() {
             </a>{" "}
             ans is{" "}
             <a
+              className="footer-link"
               href="https://github.com/Olena-Myr/weather-react-app"
               target="blank"
             >
               open-sourced on GitHub
             </a>{" "}
             and{" "}
-            <a href="https://lively-kataifi-5a4ec5.netlify.app/" target="blank">
+            <a
+              className="footer-link"
+              href="https://lively-kataifi-5a4ec5.netlify.app/"
+              target="blank"
+            >
               hosted on Netlify
             </a>
             .
