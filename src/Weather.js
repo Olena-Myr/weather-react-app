@@ -54,7 +54,6 @@ export default function Weather(props) {
               <li>
                 <FormattedDate date={weatherData.date} />
               </li>
-              <li>April,07 2023</li>
             </ul>
           </div>
           <div className="col-4">
@@ -70,7 +69,7 @@ export default function Weather(props) {
               <li>
                 <span>Wind: </span>
                 <span>{Math.round(weatherData.wind)}</span>
-                <span>km/h</span>
+                <span> km/h</span>
               </li>
             </ul>
           </div>
@@ -80,7 +79,8 @@ export default function Weather(props) {
                 {Math.round(weatherData.temperature)}
               </span>
               <span className="unit">
-                <a href="#">°C </a>|<a href="#">°F </a>
+                <a href="https://lively-kataifi-5a4ec5.netlify.app">°C </a>|
+                <a href="https://lively-kataifi-5a4ec5.netlify.app">°F </a>
               </span>
             </ul>
           </div>
