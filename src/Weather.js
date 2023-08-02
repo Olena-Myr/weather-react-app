@@ -42,7 +42,10 @@ export default function Weather() {
         <div className="col-4">
           <ul>
             <li>
-              <img src="http://openweathermap.org/img/wn/04d@2x.png" />
+              <img
+                src="http://openweathermap.org/img/wn/04d@2x.png"
+                alt="icon"
+              />
             </li>
             <li>
               <span>Humidity:</span>
