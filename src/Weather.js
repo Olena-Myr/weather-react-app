@@ -3,20 +3,23 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
-  const [ready, SetReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
+      ready: true,
       temperature: response.data.main.temp,
-      wind: 6,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
       city: response.data.name,
+      iconUrl: "http://openweathermap.org/img/wn/04d@2x.png",
+      //response.data.weather[0].icon,
+      date: "Monday 12:00",
     });
-
-    SetReady(true);
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <h1>Weather Forecast</h1>
@@ -47,29 +50,23 @@ export default function Weather() {
               <li>
                 <h2>{weatherData.city}</h2>
               </li>
-              <li>
-                <span>Monday</span>
-                <span>12:00</span>
-              </li>
+              <li>{weatherData.date}</li>
               <li>April,07 2023</li>
             </ul>
           </div>
           <div className="col-4">
             <ul>
-              <li>
-                <img
-                  src="http://openweathermap.org/img/wn/04d@2x.png"
-                  alt="{weatherData.description}"
-                />
+              <li className="text-capitalize">
+                <img src={weatherData.iconUrl} alt={weatherData.description} />
               </li>
               <li>
-                <span>Humidity:</span>
-                <span>70</span>
+                <span>Humidity: </span>
+                <span>{weatherData.humidity}</span>
                 <span>%</span>
               </li>
               <li>
-                <span>Wind:</span>
-                <span>{weatherData.wind}</span>
+                <span>Wind: </span>
+                <span>{Math.round(weatherData.wind)}</span>
                 <span>km/h</span>
               </li>
             </ul>
@@ -77,9 +74,9 @@ export default function Weather() {
           <div className="col-4 mt-4">
             <ul className="temperature-style">
               <span className="temperature">
-                {Math.round(weatherData.temperature)}{" "}
+                {Math.round(weatherData.temperature)}
               </span>
-              <span className="units">
+              <span className="unit">
                 <a href="#">°C </a>|<a href="#">°F </a>
               </span>
             </ul>
