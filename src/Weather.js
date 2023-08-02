@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
-    //console.log(response.data);
+    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -15,7 +16,7 @@ export default function Weather(props) {
       city: response.data.name,
       iconUrl: "http://openweathermap.org/img/wn/04d@2x.png",
       //response.data.weather[0].icon,
-      date: "Monday 12:00",
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -50,7 +51,9 @@ export default function Weather(props) {
               <li>
                 <h2>{weatherData.city}</h2>
               </li>
-              <li>{weatherData.date}</li>
+              <li>
+                <FormattedDate date={weatherData.date} />
+              </li>
               <li>April,07 2023</li>
             </ul>
           </div>
