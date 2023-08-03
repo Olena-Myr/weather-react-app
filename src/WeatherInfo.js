@@ -1,5 +1,6 @@
 import react from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
   return (
@@ -35,13 +36,9 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col-4 mt-4">
           <ul className="temperature-style">
-            <span className="temperature">
-              {Math.round(props.data.temperature)}
-            </span>
-            <span className="unit">
-              <a href="https://lively-kataifi-5a4ec5.netlify.app">°C </a>|
-              <a href="https://lively-kataifi-5a4ec5.netlify.app">°F </a>
-            </span>
+            <div>
+              <WeatherTemperature celsius={props.data.temperature} />
+            </div>
           </ul>
         </div>
       </div>
