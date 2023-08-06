@@ -36,7 +36,7 @@ export default function App() {
             . <br />
             <a
               className="footer-link"
-              href="http://www.freepik.com"
+              href="https://www.freepik.com/free-vector/doodle-weather-set_2869795.htm"
               target="blank"
             >
               Designed by Freepik
