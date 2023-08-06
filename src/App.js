@@ -33,6 +33,14 @@ export default function App() {
             >
               hosted on Netlify
             </a>
+            . <br />
+            <a
+              className="footer-link"
+              href="http://www.freepik.com"
+              target="blank"
+            >
+              Designed by Freepik
+            </a>
             .
           </small>
         </footer>
